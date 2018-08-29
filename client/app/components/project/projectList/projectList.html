@@ -1,0 +1,8 @@
+<ul class="list-group" ng-repeat="project in $ctrl.projects">
+  <button type="button" ng-click="$ctrl.selectedProject({project: project})" class="list-group-item">
+    {{project.project}}
+    <span ng-click="$ctrl.deleteProject({project: project})" class="badge">
+      <span class="glyphicon glyphicon-remove"></span>
+    </span>
+  </button>
+</ul>

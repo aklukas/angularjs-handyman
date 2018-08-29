@@ -1,0 +1,17 @@
+<navbar></navbar>
+
+<div class="container">
+  <project-detail
+    class="col-lg-5"
+    project-form="$ctrl.projectForm"
+    form="$ctrl.form"
+    save-project="$ctrl.saveProject(form)"
+    reset-form="$ctrl.resetForm()">
+  </project-detail>
+  <project-list
+    class="col-lg-5"
+    projects="$ctrl.projects"
+    selected-project="$ctrl.selectedProject(project)"
+    delete-project="$ctrl.deleteProject(project)">
+  </project-list>
+</div>
