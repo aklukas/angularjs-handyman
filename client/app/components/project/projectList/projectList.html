@@ -1,8 +1,24 @@
-<ul class="list-group" ng-repeat="project in $ctrl.projects">
-  <button type="button" ng-click="$ctrl.selectedProject({project: project})" class="list-group-item">
-    {{project.project}}
-    <span ng-click="$ctrl.deleteProject({project: project})" class="badge">
-      <span class="glyphicon glyphicon-remove"></span>
-    </span>
-  </button>
-</ul>
+<div class="panel panel-info">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Projects</div>
+  <!-- Table -->
+  <table class="table">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Handyman</th>
+    <th>Description</th>
+    <th><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></th>
+    <tr ng-repeat="project in $ctrl.projects">
+      <td>{{project.id}}</td>
+      <td>{{project.project}}</td>
+      <td>{{project.assignee}}</td>
+      <td>{{project.description}}</td>
+      <td>
+        <span ng-click="$ctrl.deleteProject({project: project})" class="btn badge">
+          <span class="glyphicon glyphicon-remove">
+          </span>
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>
