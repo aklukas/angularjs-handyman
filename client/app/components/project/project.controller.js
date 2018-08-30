@@ -23,9 +23,6 @@ class ProjectController {
   }
 
   saveProject(form) {
-    if(this.form.$invalid) {
-      alert('All fields required')
-    }
     if(this.form.$valid) {
       if (form.id) {
         this.updateProject(form);

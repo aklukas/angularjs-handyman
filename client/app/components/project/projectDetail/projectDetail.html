@@ -6,18 +6,22 @@
     <form novalidate name="$ctrl.form" ng-submit="$ctrl.saveProject({form: $ctrl.projectForm})">
       <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.requester)">
         <input class="form-control" type="text" placeholder="Your name" ng-model="$ctrl.projectForm.requester" name="requester" ng-required="true">
+        <label ng-if="$ctrl.errorMessage($ctrl.form.requester)" class="control-label">Please input your name.</label>
       </div>
       <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.assignee)">
         <input class="form-control" type="text" placeholder="Handyman" ng-model="$ctrl.projectForm.assignee"
                name="assignee" ng-required="true">
+        <label ng-if="$ctrl.errorMessage($ctrl.form.assignee)" class="control-label">Please add a handyman.</label>
       </div>
       <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.project)">
         <input class="form-control" type="text" placeholder="Project Name" ng-model="$ctrl.projectForm.project"
                name="project" ng-required="true">
+        <label ng-if="$ctrl.errorMessage($ctrl.form.project)" class="control-label">Please give your project a name.</label>
       </div>
       <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.description)">
-        <textarea class="form-control" type="text" placeholder="Description" ng-model="$ctrl.projectForm.description"
+        <textarea class="form-control" rows="3" type="text" placeholder="Description" ng-model="$ctrl.projectForm.description"
                   name="description" ng-required="true"></textarea>
+        <label ng-if="$ctrl.errorMessage($ctrl.form.description)" class="control-label">Please add a description.</label>
       </div>
       <button type="submit" class="btn btn-info">{{$ctrl.projectForm.id ? 'Save' : 'Create'}}</button>
       <button type="button" ng-click="$ctrl.resetForm()" class="btn btn-default">Clear</button>
